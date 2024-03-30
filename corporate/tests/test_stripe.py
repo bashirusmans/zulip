@@ -8861,7 +8861,7 @@ class TestRemoteServerBillingFlow(StripeTestCase, RemoteServerTestCase):
         billing_base_url = self.billing_session.billing_base_url
 
         # Get server deactivation confirmation link
-        with self.settings(EXTERNAL_HOST="zulipdev.com:9991"):
+        with self.settings(EXTERNAL_HOST="zulipdev.com:9981"):
             confirmation_link = generate_confirmation_link_for_server_deactivation(
                 self.remote_server, 10
             )

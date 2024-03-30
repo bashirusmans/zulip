@@ -56,7 +56,7 @@ details worth understanding:
 - Return to "Credentials", and select "Create credentials". Choose
   "OAuth client ID", and follow prompts to create a consent screen, etc.
   For "Authorized redirect URIs", fill in
-  `http://auth.zulipdev.com:9991/complete/google/` .
+  `http://auth.zulipdev.com:9981/complete/google/` .
 
 - You should get a client ID and a client secret. Copy them. In
   `dev-secrets.conf`, set `social_auth_google_key` to the client ID
@@ -67,7 +67,7 @@ details worth understanding:
 - Register an OAuth2 application with GitHub at one of
   <https://github.com/settings/developers> or
   <https://github.com/organizations/ORGNAME/settings/developers>.
-  Specify `http://auth.zulipdev.com:9991/complete/github/` as the callback URL.
+  Specify `http://auth.zulipdev.com:9981/complete/github/` as the callback URL.
 
 - You should get a page with settings for your new application,
   showing a client ID and a client secret. In `dev-secrets.conf`, set
@@ -78,7 +78,7 @@ details worth understanding:
 
 - Register an OAuth application with GitLab at
   <https://gitlab.com/oauth/applications>.
-  Specify `http://auth.zulipdev.com:9991/complete/gitlab/` as the callback URL.
+  Specify `http://auth.zulipdev.com:9981/complete/gitlab/` as the callback URL.
 
 - You should get a page containing the Application ID and Secret for
   your new application. In `dev-secrets.conf`, enter the Application
@@ -91,7 +91,7 @@ details worth understanding:
   Enable App ID and Create a Services ID with the instructions in
   <https://help.apple.com/developer-account/?lang=en#/dev1c0e25352> .
   When prompted for a "Return URL", enter
-  `http://auth.zulipdev.com:9991/complete/apple/` .
+  `http://auth.zulipdev.com:9981/complete/apple/` .
 
 - [Create a Sign in with Apple private key](https://help.apple.com/developer-account/?lang=en#/dev77c875b7e)
 
@@ -111,8 +111,8 @@ details worth understanding:
 - Set up SAML authentication by following
   [Okta's documentation](https://developer.okta.com/docs/guides/saml-application-setup/overview/).
   Specify:
-  - `http://localhost:9991/complete/saml/` for the "Single sign on URL"`.
-  - `http://localhost:9991` for the "Audience URI (SP Entity ID)".
+  - `http://localhost:9981/complete/saml/` for the "Single sign on URL"`.
+  - `http://localhost:9981` for the "Audience URI (SP Entity ID)".
   - Skip "Default RelayState".
   - Skip "Name ID format".
   - Set 'Email` for "Application username format".

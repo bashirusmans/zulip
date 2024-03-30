@@ -124,7 +124,7 @@ There are a few ways to see your translations in the Zulip UI:
 
 - You can insert the language code as a URL prefix. For example, you
   can view the login page in German using
-  `http://localhost:9991/de/login/`. This works for any part of the
+  `http://localhost:9981/de/login/`. This works for any part of the
   Zulip UI, including portico (logged-out) pages.
 - For Zulip's logged-in UI (i.e. the actual web app), you can [pick the
   language](https://zulip.com/help/change-your-language) in the
@@ -151,7 +151,7 @@ There are a few ways to see your translations in the Zulip UI:
   ```python
   import requests
   headers = {"Accept-Language": "de"}
-  response = requests.get("http://localhost:9991/login/", headers=headers)
+  response = requests.get("http://localhost:9981/login/", headers=headers)
   print(response.content)
   ```
 

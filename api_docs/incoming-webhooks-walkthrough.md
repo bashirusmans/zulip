@@ -245,7 +245,7 @@ request was made by an authorized user.
 
 Using curl:
 ```bash
-curl -X POST -H "Content-Type: application/json" -d '{ "featured_title":"Marilyn Monroe", "featured_url":"https://en.wikipedia.org/wiki/Marilyn_Monroe" }' http://localhost:9991/api/v1/external/helloworld\?api_key\=<api_key>
+curl -X POST -H "Content-Type: application/json" -d '{ "featured_title":"Marilyn Monroe", "featured_url":"https://en.wikipedia.org/wiki/Marilyn_Monroe" }' http://localhost:9981/api/v1/external/helloworld\?api_key\=<api_key>
 ```
 
 After running the above command, you should see something similar to:
@@ -262,7 +262,7 @@ Using `manage.py` from within the Zulip development environment:
 (zulip-py3-venv) vagrant@vagrant:/srv/zulip$
 ./manage.py send_webhook_fixture_message \
     --fixture=zerver/webhooks/helloworld/fixtures/hello.json \
-    '--url=http://localhost:9991/api/v1/external/helloworld?api_key=<api_key>'
+    '--url=http://localhost:9981/api/v1/external/helloworld?api_key=<api_key>'
 ```
 
 After running the above command, you should see something similar to:
@@ -291,7 +291,7 @@ This is the GUI tool.
 
 {start_tabs}
 
-1. Run `./tools/run-dev` then go to http://localhost:9991/devtools/integrations/.
+1. Run `./tools/run-dev` then go to http://localhost:9981/devtools/integrations/.
 
 1. Set the following mandatory fields:
 **Bot** - Any incoming webhook bot.
@@ -454,13 +454,13 @@ Learn how Zulip integrations work with this simple Hello World example!
         (zulip-py3-venv) vagrant@vagrant:/srv/zulip$
         ./manage.py send_webhook_fixture_message \
         > --fixture=zerver/tests/fixtures/helloworld/hello.json \
-        > '--url=http://localhost:9991/api/v1/external/helloworld?api_key=abcdefgh&stream=stream%20name;'
+        > '--url=http://localhost:9981/api/v1/external/helloworld?api_key=abcdefgh&stream=stream%20name;'
     ```
 
     Or, use curl:
 
     ```
-    curl -X POST -H "Content-Type: application/json" -d '{ "featured_title":"Marilyn Monroe", "featured_url":"https://en.wikipedia.org/wiki/Marilyn_Monroe" }' http://localhost:9991/api/v1/external/helloworld\?api_key=abcdefgh&stream=stream%20name;
+    curl -X POST -H "Content-Type: application/json" -d '{ "featured_title":"Marilyn Monroe", "featured_url":"https://en.wikipedia.org/wiki/Marilyn_Monroe" }' http://localhost:9981/api/v1/external/helloworld\?api_key=abcdefgh&stream=stream%20name;
     ```
 
 {!congrats.md!}

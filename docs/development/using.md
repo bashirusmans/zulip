@@ -30,7 +30,7 @@ the development environment][authentication-dev-server].
   save time.
 - Many useful development tools, including tools for rebuilding the
   database with different test data, are documented in-app at
-  `https://localhost:9991/devtools`.
+  `https://localhost:9981/devtools`.
 - If you want to restore your development environment's database to a
   pristine state, you can use `./tools/rebuild-dev-database`.
 
@@ -64,7 +64,7 @@ the development environment][authentication-dev-server].
 ## Web
 
 - Once the development server (`run-dev`) is running, you can visit
-  <http://localhost:9991/> in your browser.
+  <http://localhost:9981/> in your browser.
 - By default, the development server homepage just shows a list of the
   users that exist on the server and you can log in as any of them by
   just clicking on a user.

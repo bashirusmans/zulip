@@ -59,7 +59,7 @@ test the various Zulip configurations for different subdomains:
 
 - Realms are subdomains on `*.zulipdev.com`, just like `*.zulipchat.com`.
 - The root domain (like `zulip.com` itself) is `zulipdev.com` itself.
-- The default realm is hosted on `localhost:9991` rather than
+- The default realm is hosted on `localhost:9981` rather than
   `zulip.zulipdev.com`, using the [`REALM_HOSTS`
   feature](../production/multiple-organizations.md) feature.
 

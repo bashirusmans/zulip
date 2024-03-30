@@ -647,7 +647,7 @@ class AbstractAttachment(models.Model):
     file_name = models.TextField(db_index=True)
 
     # path_id is a storage location agnostic representation of the path of the file.
-    # If the path of a file is http://localhost:9991/user_uploads/a/b/abc/temp_file.py
+    # If the path of a file is http://localhost:9981/user_uploads/a/b/abc/temp_file.py
     # then its path_id will be a/b/abc/temp_file.py.
     path_id = models.TextField(db_index=True, unique=True)
     owner = models.ForeignKey(UserProfile, on_delete=CASCADE)

@@ -28,15 +28,15 @@ if external_host_env is None:
     if IS_DEV_DROPLET:
         # For our droplets, we use the hostname (eg github_username.zulipdev.org) by default.
         # Note that this code is duplicated in run-dev.
-        EXTERNAL_HOST = os.uname()[1].lower() + ":9991"
+        EXTERNAL_HOST = os.uname()[1].lower() + ":9981"
     else:
         # For local development environments, we use localhost by
         # default, via the "zulipdev.com" hostname.
-        EXTERNAL_HOST = "zulipdev.com:9991"
+        EXTERNAL_HOST = "zulipdev.com:9981"
         # Serve the main dev realm at the literal name "localhost",
         # so it works out of the box even when not on the Internet.
         REALM_HOSTS = {
-            "zulip": "localhost:9991",
+            "zulip": "localhost:9981",
         }
 else:
     EXTERNAL_HOST = external_host_env
@@ -81,7 +81,7 @@ EXTRA_INSTALLED_APPS = ["zilencer", "analytics", "corporate"]
 # Disable Camo in development
 CAMO_URI = ""
 
-TORNADO_PORTS = [9993]
+TORNADO_PORTS = [9983]
 
 OPEN_REALM_CREATION = True
 WEB_PUBLIC_STREAMS_ENABLED = True
@@ -186,14 +186,14 @@ BILLING_ENABLED = True
 LANDING_PAGE_NAVBAR_MESSAGE: Optional[str] = None
 
 # Our run-dev proxy uses X-Forwarded-Port to communicate to Django
-# that the request is actually on port 9991, not port 9992 (the Django
+# that the request is actually on port 9981, not port 9982 (the Django
 # server's own port); this setting tells Django to read that HTTP
 # header.  Important for SAML authentication in the development
 # environment.
 USE_X_FORWARDED_PORT = True
 
 # Override the default SAML entity ID
-SOCIAL_AUTH_SAML_SP_ENTITY_ID = "http://localhost:9991"
+SOCIAL_AUTH_SAML_SP_ENTITY_ID = "http://localhost:9981"
 
 SOCIAL_AUTH_SUBDOMAIN = "auth"
 

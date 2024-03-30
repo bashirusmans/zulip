@@ -41,7 +41,7 @@ script (or just on the command line for debugging), you can use e.g.:
 
 ```console
 $ ./scripts/get-django-setting EMAIL_GATEWAY_PATTERN
-%s@localhost:9991
+%s@localhost:9981
 ```
 
 Zulip has separated those settings that we expect a system

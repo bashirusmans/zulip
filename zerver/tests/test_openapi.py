@@ -861,13 +861,13 @@ class TestCurlExampleGeneration(ZulipTestCase):
     }
 
     def curl_example(self, endpoint: str, method: str, *args: Any, **kwargs: Any) -> List[str]:
-        return generate_curl_example(endpoint, method, "http://localhost:9991/api", *args, **kwargs)
+        return generate_curl_example(endpoint, method, "http://localhost:9981/api", *args, **kwargs)
 
     def test_generate_and_render_curl_example(self) -> None:
         generated_curl_example = self.curl_example("/get_stream_id", "GET")
         expected_curl_example = [
             "```curl",
-            "curl -sSX GET -G http://localhost:9991/api/v1/get_stream_id \\",
+            "curl -sSX GET -G http://localhost:9981/api/v1/get_stream_id \\",
             "    -u BOT_EMAIL_ADDRESS:BOT_API_KEY \\",
             "    --data-urlencode stream=Denmark",
             "```",
@@ -884,7 +884,7 @@ class TestCurlExampleGeneration(ZulipTestCase):
         generated_curl_example = self.curl_example("/dev_fetch_api_key", "POST")
         expected_curl_example = [
             "```curl",
-            "curl -sSX POST http://localhost:9991/api/v1/dev_fetch_api_key \\",
+            "curl -sSX POST http://localhost:9981/api/v1/dev_fetch_api_key \\",
             "    --data-urlencode username=iago@zulip.com",
             "```",
         ]
@@ -896,7 +896,7 @@ class TestCurlExampleGeneration(ZulipTestCase):
         generated_curl_example = self.curl_example("/mark_stream_as_read", "POST")
         expected_curl_example = [
             "```curl",
-            "curl -sSX POST http://localhost:9991/api/v1/mark_stream_as_read \\",
+            "curl -sSX POST http://localhost:9981/api/v1/mark_stream_as_read \\",
             "    -u BOT_EMAIL_ADDRESS:BOT_API_KEY \\",
             "    --data-urlencode stream_id=1 \\",
             "    --data-urlencode bool_param=false",
@@ -914,7 +914,7 @@ class TestCurlExampleGeneration(ZulipTestCase):
         generated_curl_example = self.curl_example("/messages", "GET")
         expected_curl_example = [
             "```curl",
-            "curl -sSX GET -G http://localhost:9991/api/v1/messages \\",
+            "curl -sSX GET -G http://localhost:9981/api/v1/messages \\",
             "    -u BOT_EMAIL_ADDRESS:BOT_API_KEY \\",
             "    --data-urlencode anchor=43 \\",
             "    --data-urlencode include_anchor=false \\",
@@ -934,7 +934,7 @@ class TestCurlExampleGeneration(ZulipTestCase):
         generated_curl_example = self.curl_example("/endpoint", "GET")
         expected_curl_example = [
             "```curl",
-            "curl -sSX GET -G http://localhost:9991/api/v1/endpoint \\",
+            "curl -sSX GET -G http://localhost:9981/api/v1/endpoint \\",
             "    -u BOT_EMAIL_ADDRESS:BOT_API_KEY \\",
             '    --data-urlencode \'param1={"key": "value"}\'',
             "```",
@@ -963,7 +963,7 @@ class TestCurlExampleGeneration(ZulipTestCase):
         generated_curl_example = self.curl_example("/endpoint/{param1}", "GET")
         expected_curl_example = [
             "```curl",
-            "curl -sSX GET -G http://localhost:9991/api/v1/endpoint/35 \\",
+            "curl -sSX GET -G http://localhost:9981/api/v1/endpoint/35 \\",
             "    -u BOT_EMAIL_ADDRESS:BOT_API_KEY \\",
             '    --data-urlencode \'param2={"key": "value"}\'',
             "```",
@@ -989,7 +989,7 @@ class TestCurlExampleGeneration(ZulipTestCase):
         )
         expected_curl_example = [
             "```curl",
-            "curl -sSX GET -G http://localhost:9991/api/v1/messages \\",
+            "curl -sSX GET -G http://localhost:9981/api/v1/messages \\",
             "    -u BOT_EMAIL_ADDRESS:BOT_API_KEY \\",
             "    --data-urlencode anchor=43 \\",
             "    --data-urlencode include_anchor=false \\",

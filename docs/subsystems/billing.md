@@ -35,7 +35,7 @@ development environment to receive webhook events from Stripe.
 - Log in to Stripe CLI using the command `stripe login`.
 - You can get Stripe CLI to forward all Stripe webhook events to our local
   webhook endpoint using the following command:
-  `stripe listen --forward-to http://localhost:9991/stripe/webhook/`
+  `stripe listen --forward-to http://localhost:9981/stripe/webhook/`
 - Wait for the `stripe listen` command in the previous step to output the
   webhook signing secret.
   - The signing secret would be used by our billing system to verify that

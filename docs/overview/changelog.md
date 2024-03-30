@@ -1645,7 +1645,7 @@ _Released 2021-05-13_
 #### Upgrade notes for 4.0
 
 - Changed the Tornado service to use 127.0.0.1:9800 instead of
-  127.0.0.1:9993 as its default network address, to simplify support
+  127.0.0.1:9983 as its default network address, to simplify support
   for multiple Tornado processes. Since Tornado only listens on
   localhost, this change should have no visible effect unless another
   service is using port 9800.

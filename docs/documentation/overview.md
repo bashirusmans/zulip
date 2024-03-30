@@ -55,7 +55,7 @@ documentation using:
 ./tools/build-docs
 ```
 
-and then opening `http://127.0.0.1:9991/docs/index.html` in your
+and then opening `http://127.0.0.1:9981/docs/index.html` in your
 browser. The raw files are available at
 `file:///path/to/zulip/docs/_build/html/index.html` in your browser
 (so you can also use e.g. `firefox docs/_build/html/index.html` from

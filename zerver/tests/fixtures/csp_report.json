@@ -1,7 +1,7 @@
 {
     "csp-report": {
-        "document-uri": "http://localhost:9991/",
-        "referrer": "http://zulipdev.com:9991/devlogin/",
+        "document-uri": "http://localhost:9981/",
+        "referrer": "http://zulipdev.com:9981/devlogin/",
         "violated-directive": "script-src",
         "effective-directive": "script-src",
         "original-policy": "default-src 'self'; report-uri /report/csp_violations",
@@ -9,7 +9,7 @@
         "blocked-uri": "eval",
         "line-number": 1256,
         "column-number": 1,
-        "source-file": "http://localhost:9991/webpack/common.js",
+        "source-file": "http://localhost:9981/webpack/common.js",
         "status-code": 200,
         "script-sample": ""
     }

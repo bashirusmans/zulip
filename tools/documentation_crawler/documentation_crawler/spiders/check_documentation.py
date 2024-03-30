@@ -18,6 +18,6 @@ def get_start_url() -> List[str]:
 
 class DocumentationSpider(BaseDocumentationSpider):
     name = "documentation_crawler"
-    deny_domains = ["localhost:9991"]
+    deny_domains = ["localhost:9981"]
     deny = [r"\_sources\/.*\.txt"]
     start_urls = get_start_url()

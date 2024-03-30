@@ -3,7 +3,7 @@ info:
   title: Test API
   version: 1.0.0
 servers:
-  - url: "http://localhost:9991/api/v1"
+  - url: "http://localhost:9981/api/v1"
 paths:
   /test1:
     get:

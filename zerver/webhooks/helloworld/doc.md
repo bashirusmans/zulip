@@ -19,13 +19,13 @@ integration](/api/incoming-webhooks-walkthrough).
         (zulip-py3-venv) vagrant@vagrant:/srv/zulip$
         ./manage.py send_webhook_fixture_message \
         > --fixture=zerver/tests/fixtures/helloworld/hello.json \
-        > '--url=http://localhost:9991/api/v1/external/helloworld?api_key=abcdefgh&stream=stream%20name;'
+        > '--url=http://localhost:9981/api/v1/external/helloworld?api_key=abcdefgh&stream=stream%20name;'
     ```
 
     Or, use curl:
 
     ```
-    curl -X POST -H "Content-Type: application/json" -d '{ "featured_title":"Marilyn Monroe", "featured_url":"https://en.wikipedia.org/wiki/Marilyn_Monroe" }' http://localhost:9991/api/v1/external/helloworld\?api_key=abcdefgh&stream=stream%20name;
+    curl -X POST -H "Content-Type: application/json" -d '{ "featured_title":"Marilyn Monroe", "featured_url":"https://en.wikipedia.org/wiki/Marilyn_Monroe" }' http://localhost:9981/api/v1/external/helloworld\?api_key=abcdefgh&stream=stream%20name;
     ```
 
 {!congrats.md!}

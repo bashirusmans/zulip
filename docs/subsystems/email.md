@@ -56,7 +56,7 @@ custom backend, `EmailLogBackEnd`. It does the following:
 
 - Logs any sent emails to `var/log/email_content.log`. This log is
   displayed by the `/emails` endpoint
-  (e.g. http://zulip.zulipdev.com:9991/emails).
+  (e.g. http://zulip.zulipdev.com:9981/emails).
 - Print a friendly message on console advertising `/emails` to make
   this nice and discoverable.
 
@@ -107,7 +107,7 @@ email_password = gmail_password
 - Images won't be displayed in a real email client unless you change
   the `images_base_url` used for emails to a public URL such as
   `https://chat.zulip.org/static/images/emails` (image links to
-  `localhost:9991` aren't allowed by modern email providers). See
+  `localhost:9981` aren't allowed by modern email providers). See
   `zproject/email_backends.py` for more details.
 
 - While running the backend test suite, we use

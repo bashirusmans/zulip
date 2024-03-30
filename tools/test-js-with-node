@@ -346,11 +346,11 @@ def get_dev_host() -> str:
         hostname = os.uname()[1].lower()
         if ".zulipdev.org" not in hostname:
             hostname += ".zulipdev.org"
-        return hostname + ":9991"
+        return hostname + ":9981"
     else:
         # For local development environments, we use localhost by
         # default, via the "zulipdev.com" hostname.
-        return "zulipdev.com:9991"
+        return "zulipdev.com:9981"
 
 
 def print_error(msg: str) -> None:

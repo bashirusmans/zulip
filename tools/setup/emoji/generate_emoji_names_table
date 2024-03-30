@@ -219,7 +219,7 @@ def main() -> None:
         )
 
     print(
-        "Done! Open http://localhost:9991/static/generated/emoji/emoji_names_table.html "
+        "Done! Open http://localhost:9981/static/generated/emoji/emoji_names_table.html "
         "to view(after starting the dev server)."
     )
 

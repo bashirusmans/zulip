@@ -212,14 +212,14 @@ expected.
 1. Set the `EXTERNAL_HOST` environment variable.
 
    ```console
-   (zulip-py3-venv) vagrant@ubuntu-18:/srv/zulip$ export EXTERNAL_HOST="$(hostname -I | xargs):9991"
+   (zulip-py3-venv) vagrant@ubuntu-18:/srv/zulip$ export EXTERNAL_HOST="$(hostname -I | xargs):9981"
    (zulip-py3-venv) vagrant@ubuntu-18:/srv/zulip$ echo $EXTERNAL_HOST
    ```
 
    The output will be like:
 
    ```console
-   172.28.122.156:9991
+   172.28.122.156:9981
    ```
 
    Make sure you note down this down. This is where your zulip development web
@@ -242,13 +242,13 @@ expected.
    ```console
    Starting Zulip on:
 
-        http://172.30.24.235:9991/
+        http://172.30.24.235:9981/
 
    Internal ports:
-      9991: Development server proxy (connect here)
-      9992: Django
-      9993: Tornado
-      9994: webpack
+      9981: Development server proxy (connect here)
+      9982: Django
+      9983: Tornado
+      9983: webpack
    ```
 
    Visit the indicated URL in your web browser.

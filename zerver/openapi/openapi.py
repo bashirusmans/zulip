@@ -424,7 +424,7 @@ def find_openapi_endpoint(path: str) -> Optional[str]:
 def validate_against_openapi_schema(
     content: Dict[str, Any], path: str, method: str, status_code: str
 ) -> bool:
-    mock_request = MockRequest("http://localhost:9991/", method, "/api/v1" + path)
+    mock_request = MockRequest("http://localhost:9981/", method, "/api/v1" + path)
     mock_response = MockResponse(
         orjson.dumps(content),
         status_code=int(status_code),
@@ -545,7 +545,7 @@ def validate_request(
 ) -> None:
     assert isinstance(data, dict)
     mock_request = MockRequest(
-        "http://localhost:9991/",
+        "http://localhost:9981/",
         method,
         "/api/v1" + url,
         headers=http_headers,

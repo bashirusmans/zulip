@@ -32,7 +32,7 @@ servers:
   # chat.zulip.org
   - url: "https://chat.zulip.org/api/v1"
   # Development server
-  - url: "http://localhost:9991/api/v1"
+  - url: "http://localhost:9981/api/v1"
   # Test suite
   - url: "http://{subdomain}.testserver/json"
 security:
@@ -16165,7 +16165,7 @@ paths:
                         "is_incompatible": false,
                         "email_auth_enabled": true,
                         "require_email_format_usernames": true,
-                        "realm_uri": "http://localhost:9991",
+                        "realm_uri": "http://localhost:9981",
                         "realm_name": "Zulip Dev",
                         "realm_icon": "https://secure.gravatar.com/avatar/62429d594b6ffc712f54aee976a18b44?d=identicon",
                         "realm_description": "<p>The Zulip development environment default organization.  It's great for testing!</p>",

@@ -29,15 +29,15 @@ You will see something like:
 ```console
 Starting Zulip on:
 
-        http://localhost:9991/
+        http://localhost:9981/
 
 Internal ports:
-   9991: Development server proxy (connect here)
-   9992: Django
-   9993: Tornado
-   9994: webpack
+   9981: Development server proxy (connect here)
+   9982: Django
+   9983: Tornado
+   9983: webpack
 
-Tornado server (re)started on port 9993
+Tornado server (re)started on port 9983
 
 2023-12-15 20:57:14.206 INFO [process_queue] 13 queue worker threads were launched
 frontend:
@@ -45,7 +45,7 @@ frontend:
 ```
 
 Now the Zulip server should be running and accessible. Verify this by
-navigating to <http://localhost:9991/devlogin> in the browser on your main machine.
+navigating to <http://localhost:9981/devlogin> in the browser on your main machine.
 
 You should see something like this:
 

@@ -34,7 +34,7 @@ Starts the app listening on localhost, for local development.
 This script launches the Django and Tornado servers, then runs a reverse proxy
 which serves to both of them.  After it's all up and running, browse to
 
-    http://localhost:9991/
+    http://localhost:9981/
 
 Note that, while runserver and runtornado have the usual auto-restarting
 behavior, the reverse proxy itself does *not* automatically restart on changes
@@ -71,7 +71,7 @@ if options.interface is None:
     if user_name in ["vagrant", "zulipdev"]:
         # In the Vagrant development environment, we need to listen on
         # all ports, and it's safe to do so, because Vagrant is only
-        # exposing certain guest ports (by default just 9991) to the
+        # exposing certain guest ports (by default just 9981) to the
         # host.  The same argument applies to the remote development
         # servers using username "zulipdev".
         options.interface = None
@@ -82,7 +82,7 @@ elif options.interface == "":
     options.interface = None
 
 runserver_args: List[str] = []
-base_port = 9991
+base_port = 9981
 if options.test:
     base_port = 9981
     settings_module = "zproject.test_settings"

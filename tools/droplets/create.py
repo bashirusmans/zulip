@@ -266,7 +266,7 @@ Your remote Zulip dev server has been created!
 - Once you log in, you should see `(zulip-py3-venv) ~$`.
 - To start the dev server, `cd zulip` and then run `./tools/run-dev`.
 - While the dev server is running, you can see the Zulip server in your browser at
-  http://{droplet_domain_name}:9991.
+  http://{droplet_domain_name}:9981.
 """
     )
 

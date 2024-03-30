@@ -502,7 +502,7 @@ def main() -> None:
         # We do this late, because it can take quite a while.
         print("Writing HTML report")
         cov.html_report(directory="var/coverage", show_contexts=True)
-        print("HTML report saved; visit at http://127.0.0.1:9991/coverage/index.html")
+        print("HTML report saved; visit at http://127.0.0.1:9981/coverage/index.html")
 
     if options.profile:
         prof.disable()

@@ -19,7 +19,7 @@ and a handful of longer guides. The feature articles serve a few different purpo
   organization settings.
 
 Zulip help center documentation is available under `/help/` on any Zulip server;
-(e.g. <https://zulip.com/help/> or `http://localhost:9991/help/` in
+(e.g. <https://zulip.com/help/> or `http://localhost:9981/help/` in
 the Zulip development environment). The help center documentation is not hosted
 on ReadTheDocs, since Zulip supports running a server completely disconnected
 from the Internet, and we'd like the documentation to be available in that
@@ -36,7 +36,7 @@ Images are usually linked from `static/images/help/`.
 This means that you can contribute to the Zulip help center documentation
 by just adding to or editing the collection of Markdown files under
 `help/...`. If you have the Zulip development environment set up, you simply
-need to reload your browser on `http://localhost:9991/help/foo` to see the
+need to reload your browser on `http://localhost:9981/help/foo` to see the
 latest version of `foo.md` rendered.
 
 This system is designed to make writing and maintaining such documentation
@@ -190,8 +190,8 @@ existing links to that article's section in your branch.
 
 If you have the Zulip development environment set up, you can manually
 test your changes by loading the old URL in your browser (e.g.,
-`http://localhost:9991/help/foo`), and confirming that it redirects to
-the new url (e.g., `http://localhost:9991/help/bar`).
+`http://localhost:9981/help/foo`), and confirming that it redirects to
+the new url (e.g., `http://localhost:9981/help/bar`).
 
 There is also an automated test in `zerver/tests/test_urls.py` that
 checks all the URL redirects, which you can run from the command line:

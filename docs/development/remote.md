@@ -61,7 +61,7 @@ need to.
 The main difference from the standard instructions is that for a
 remote development environment, and you're not using our Digital Ocean
 Droplet infrastructure (which handles `EXTERNAL_HOST` for you), you'll
-need to run `export EXTERNAL_HOST=<REMOTE_IP>:9991` in a shell before
+need to run `export EXTERNAL_HOST=<REMOTE_IP>:9981` in a shell before
 running `run-dev` (and see also the `--interface=''` option
 documented below).
 
@@ -80,8 +80,8 @@ you cloned Zulip:
 ./tools/run-dev --interface=''
 ```
 
-This will start up the Zulip server on port 9991. You can then
-navigate to `http://<REMOTE_IP>:9991/devlogin` and you should see something like
+This will start up the Zulip server on port 9981. You can then
+navigate to `http://<REMOTE_IP>:9981/devlogin` and you should see something like
 this screenshot of the Zulip development environment:
 
 ![Image of Zulip development environment](../images/zulip-devlogin.png)
@@ -100,7 +100,7 @@ port-forwarding to access Zulip by running the following command in
 your terminal:
 
 ```bash
-ssh -L 3000:127.0.0.1:9991 <username>@<remote_server_ip> -N
+ssh -L 3000:127.0.0.1:9981 <username>@<remote_server_ip> -N
 ```
 
 Now you can access Zulip by navigating to `http://127.0.0.1:3000` in
