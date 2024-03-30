@@ -91,14 +91,14 @@ function get_language_matcher(query) {
 
 export function query_matches_person(query, person) {
     return (
-        typeahead.query_matches_string(query, person.full_name, " ") ||
+        typeahead.query_matches_string_in_order(query, person.full_name, " ") ||
         (Boolean(person.delivery_email) &&
-            typeahead.query_matches_string(query, people.get_visible_email(person), " "))
+            typeahead.query_matches_string_in_order(query, people.get_visible_email(person), " "))
     );
 }
 
 export function query_matches_name(query, user_group_or_stream) {
-    return typeahead.query_matches_string(query, user_group_or_stream.name, " ");
+    return typeahead.query_matches_string_in_order(query, user_group_or_stream.name, " ");
 }
 
 function get_stream_or_user_group_matcher(query) {
@@ -115,8 +115,8 @@ function get_slash_matcher(query) {
 
     return function (item) {
         return (
-            typeahead.query_matches_string(query, item.name, " ") ||
-            typeahead.query_matches_string(query, item.aliases, " ")
+            typeahead.query_matches_string_in_order(query, item.name, " ") ||
+            typeahead.query_matches_string_in_order(query, item.aliases, " ")
         );
     };
 }
@@ -129,7 +129,7 @@ function get_topic_matcher(query) {
             topic,
         };
 
-        return typeahead.query_matches_string(query, obj.topic, " ");
+        return typeahead.query_matches_string_in_order(query, obj.topic, " ");
     };
 }
 
@@ -689,13 +689,15 @@ export function get_candidates(query) {
     const syntax_token = current_token.slice(0, 3);
     if (ALLOWED_MARKDOWN_FEATURES.syntax && (syntax_token === "```" || syntax_token === "~~~")) {
         // Only autocomplete if user starts typing a language after ```
-        if (current_token.length === 3) {
+        // unless the fence was added via the code formatting button.
+        if (current_token.length === 3 && !compose_ui.code_formatting_button_triggered) {
             return false;
         }
 
         // If the only input is a space, don't autocomplete
         current_token = current_token.slice(3);
         if (current_token === " ") {
+            compose_ui.set_code_formatting_button_triggered(false);
             return false;
         }
 
@@ -705,7 +707,13 @@ export function get_candidates(query) {
         }
         this.completing = "syntax";
         this.token = current_token;
-        return realm_playground.get_pygments_typeahead_list_for_composebox();
+        // If the code formatting button was triggered, we want to show a blank option
+        // to improve the discoverability of the possibility of specifying a language.
+        const language_list = compose_ui.code_formatting_button_triggered
+            ? ["", ...realm_playground.get_pygments_typeahead_list_for_composebox()]
+            : realm_playground.get_pygments_typeahead_list_for_composebox();
+        compose_ui.set_code_formatting_button_triggered(false);
+        return language_list;
     }
 
     // Only start the emoji autocompleter if : is directly after one
